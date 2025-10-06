@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trading Agent Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI Trading Agent Dashboard</h1>
+            <div class="status-bar">
+                <span class="status-label">Status:</span>
+                <span id="agent-status" class="status-badge stopped">STOPPED</span>
+                <span class="market-hours" id="market-hours"></span>
+            </div>
+        </header>
+
+        <!-- Control Buttons -->
+        <div class="controls">
+            <button id="btn-start" class="btn btn-start">▶ Start</button>
+            <button id="btn-pause" class="btn btn-pause" disabled>⏸ Pause</button>
+            <button id="btn-stop" class="btn btn-stop" disabled>⏹ Stop</button>
+        </div>
+
+        <!-- Portfolio Summary -->
+        <div class="card">
+            <h2>💼 Portfolio Summary</h2>
+            <div class="portfolio-grid">
+                <div class="metric">
+                    <div class="metric-label">Cash Balance</div>
+                    <div class="metric-value" id="cash">₹0.00</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Holdings Value</div>
+                    <div class="metric-value" id="holdings-value">₹0.00</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Total Value</div>
+                    <div class="metric-value" id="total-value">₹0.00</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Unrealized P/L</div>
+                    <div class="metric-value" id="unrealized-pl">₹0.00</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Holdings Table -->
+        <div class="card">
+            <h2>📊 Current Holdings</h2>
+            <table id="holdings-table">
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Quantity</th>
+                        <th>Avg Price</th>
+                        <th>Current Price</th>
+                        <th>Value</th>
+                        <th>P/L</th>
+                    </tr>
+                </thead>
+                <tbody id="holdings-body">
+                    <tr><td colspan="6" class="empty">No holdings</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Recent Trades -->
+        <div class="card">
+            <h2>📝 Recent Trades</h2>
+            <table id="trades-table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Symbol</th>
+                        <th>Action</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                        <th>Reason</th>
+                    </tr>
+                </thead>
+                <tbody id="trades-body">
+                    <tr><td colspan="7" class="empty">No trades yet</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Logs -->
+        <div class="card">
+            <h2>📋 Live Logs</h2>
+            <div id="logs-container" class="logs"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
