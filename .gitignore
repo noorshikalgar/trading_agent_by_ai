@@ -131,3 +131,10 @@ cython_debug/
 
 #local data
 data/
+
+#ide
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws

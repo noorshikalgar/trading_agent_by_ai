@@ -15,20 +15,20 @@
 
 ```text
 .
-├── app.py                 # Main Flask application
-├── config.py              # Configuration settings
-├── requirements.txt       # Python dependencies
-├── templates/             # HTML templates for the web dashboard
-├── static/                # Static assets (CSS, JS)
-├── modules/               # Core modules for the trading agent
-│   ├── data_module.py     # Fetches stock price data
-│   ├── strategy_module.py # Implements trading strategies
-│   ├── execution_module.py# Simulates trade execution
-│   ├── persistence_module.py # Handles state persistence
-│   ├── scheduler_module.py   # Manages agent timing and market hours
-│   └── llm_module.py      # AI decision-making using LLM
-├── data/                  # Directory for saved state
-└── .env                   # Environment variables (e.g., API keys)
+├── app.py                         # Main Flask application
+├── config.py                      # Configuration settings
+├── requirements.txt               # Python dependencies
+├── templates/                     # HTML templates for the web dashboard
+├── static/                        # Static assets (CSS, JS)
+├── modules/                       # Core modules for the trading agent
+│   ├── data_module.py             # Fetches stock price data
+│   ├── strategy_module.py         # Implements trading strategies
+│   ├── execution_module.py        # Simulates trade execution
+│   ├── persistence_module.py      # Handles state persistence
+│   ├── scheduler_module.py        # Manages agent timing and market hours
+│   └── llm_module.py              # AI decision-making using LLM
+├── data/                          # Directory for saved state
+└── .env                           # Environment variables (e.g., API keys)
 ```
 
 ## Installation
